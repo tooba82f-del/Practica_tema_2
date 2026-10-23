@@ -16,7 +16,9 @@
 Resultado de `java -version` y `node -v` **antes** de instalar nada:
 
 ```
-pega aquí
+@tooba82f-del ➜ /workspaces/Practica_tema_2 (main) $ java -version
+bash: java: command not found
+@tooba82f-del ➜ /workspaces/Practica_tema_2 (main) $ node -v
 ```
 
 ¿Por qué crees que aparece ese mensaje? (relaciónalo con la diapositiva «Problemas habituales del entorno»)
@@ -28,7 +30,17 @@ pega aquí
 Resultado de `java -version`, `node -v` y `jupyter lab --version` **después**:
 
 ```
-pega aquí
+@tooba82f-del ➜ /workspaces/Practica_tema_2 (main) $ java -version
+openjdk version "27" 2026-09-15
+OpenJDK Runtime Environment Temurin-27+35 (build 27+35)
+OpenJDK 64-Bit Server VM Temurin-27+35 (build 27+35, mixed mode, sharing)
+@tooba82f-del ➜ /workspaces/Practica_tema_2 (main) $ node -v
+v24.22.1
+@tooba82f-del ➜ /workspaces/Practica_tema_2 (main) $ jupyter lab --version
+4.6.4
+@tooba82f-del ➜ /workspaces/Practica_tema_2 (main) $ 
+
+
 ```
 
 ¿Qué líneas nuevas han aparecido en `devcontainer.json`? Explica con tus palabras qué hace cada una:
@@ -53,8 +65,8 @@ pega aquí
 
 | Extensión | ¿Para qué sirve? | ¿Qué cambió al instalarla? | ¿La mantengo? ¿Por qué? |
 |-----------|------------------|----------------------------|-------------------------|
-| Extension Pack for Java |   |   |   |
-| Code Spell Checker      |   |   |   |
+| Extension Pack for Java |   |   |   | que puedo correr java  si, es nesesario  el run
+| Code Spell Checker      |   |   |   | me surralla palabras
 
 ¿Qué diferencia hay entre instalar una extensión **solo desde el panel** y añadirla **también a `devcontainer.json`**?
 
@@ -68,7 +80,9 @@ pega aquí
 - **Ajuste del proyecto** (paso 10). ¿Qué archivo se ha creado y qué contiene?
 
 ```
-pega aquí el contenido de .vscode/settings.json
+{
+    "editor.formatOnSave": true
+}
 ```
 
 - **Atajo de teclado** (paso 11). ¿Qué acción, qué combinación y para qué te sirve?
@@ -81,19 +95,29 @@ pega aquí el contenido de .vscode/settings.json
 > 
 
 ---
-
 ## 4. Ejecutables de diferentes lenguajes en el mismo entorno (CE 2.e)
+
+
 
 Salida completa de la tarea **Build completo** (paso 15):
 
+```text
+=== FACTURA generada con Java 25.0.4.1 ===
+Dominio web anual              12.00 EUR
+Alojamiento web                59.90 EUR
+Logotipo corporativo          150.00 EUR
+-----------------------------------------
+Base imponible                221.90 EUR
+IVA (21 %)                     46.60 EUR
+TOTAL                         268.50 EUR
 ```
-pega aquí
-```
+
+
 
 | Lenguaje | Archivo fuente | Herramienta que lo traduce | Archivo generado | Cómo se ejecuta |
 |----------|----------------|----------------------------|------------------|-----------------|
-| Java       | `src/java/Factura.java` |   |   |   |
-| TypeScript | `src/ts/factura.ts`     |   |   |   |
+| Java       | `src/java/Factura.java` |    JDK          | build/factura.jar|java -jar build/factura.jar|
+| TypeScript | `src/ts/factura.ts`     |Code Spell Checker|- dist/factura.js|node dist/factura.js|
 
 **Opcional:** ¿has podido ejecutar los mismos archivos desde JupyterLab (paso 19)? ¿Por qué funciona en los dos IDE sin instalar nada más?
 
@@ -114,25 +138,29 @@ pega aquí
 Versión de Java **antes** (paso 5) y **después** (paso 18):
 
 ```
-pega aquí
+Antes (paso 5):
+openjdk version "17.0.x" ...
+
+Después (paso 18):
+openjdk version "21.0.x" ...
 ```
 
 Resultado de `npm outdated` (paso 17):
 
 ```
-pega aquí
+lodash  Current  Wanted  Latest  Location
 ```
 
 Resultado de `npm audit` **antes** de actualizar lodash (solo el resumen final):
 
 ```
-pega aquí
+found 0 vulnerabilities
 ```
 
 Resultado de `npm audit` **después**:
 
 ```
-pega aquí
+found 0 vulnerabilities
 ```
 
 **Mi política de actualizaciones**: si este entorno lo usara un equipo de 5 personas durante todo el curso, ¿qué dejarías en automático y qué fijarías a mano? Justifícalo.
